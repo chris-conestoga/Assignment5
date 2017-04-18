@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hypothetical Software</title>
+        <link rel="stylesheet" href="main.css">
+		<!--
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		-->
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script>
+			$( function() {
+				$( "#accordion" ).accordion({
+					collapsible:false
+				});
+			});
+		</script>
+        <script src="checkForm.js" type="text/javascript"></script>
+    </head>
+    <body onload="setUpPage()">
+        <h1>Chris and Jeff's Hypothetical Software</h1>
+        <h3>That they sell, on this website. Fill out the form below to order.</h3>
+        <form id="input_form" onsubmit="return validateForm()" action="validateForm.php" method="post">
+			<div id="accordion">
+				<h3>> Place your order</h3>
+				<div id="order_section" class="menu_section">
+					<table>
+					  <tr>
+						<th>Icon</th>
+						<th>Description</th>
+						<th>Quantity</th>
+					  </tr>
+					  <tr>
+						<td><img src="standardwidget.png"></td>
+						<td>Standard Widgets:<br><b class="price">$9.95 each </b></td>
+						<td><input id="standorder" type="number" name="standard" placeholder="0"></td>
+					  </tr>
+					  <tr>
+						<td><img src="platinumwidget.png"></td>
+						<td>Platinum Deluxe Widgets:<br><b class="price">$29.95 each </b></td>
+						<td><input id="platorder" type="number" name="platinum" placeholder="0"></td>
+					  </tr>
+					</table>
+					<br/><br/>
+					
+					Please note that Sales Tax and Shipping/Handling charges will be added to all orders.
+				</div>
+				
+				
+				<h3>> Tell us about you</h3>
+				<div id="info_section" class="menu_section">
+					<div class="field_container">
+						<div class="dual_field">
+							<input id="fname" type="text" name="first_name" placeholder="First Name (required)" onblur="fnameFix()">
+							<br/>
+							<label for="fname">Letters only</label>
+						</div>
+						<div class="dual_field">
+							<input id="lname" type="text" name="last_name" placeholder="Last Name (required)" onblur="lnameFix()">
+							<br/>
+							<label for="lname">Letters only</label>
+						</div>
+					</div>
+					<br/>
+
+					<input id="pnumber" type="text" name="phone_number" placeholder="Phone Number (required)" onblur="pnumberFix()">
+					<br/>
+					<label for="pnumber">Only numbers, no spaces</label>
+					<br/><br/>
+
+					<input id="email" type="text" name="email" placeholder="Email Address (required)" onblur="emailFix()">
+					<br/>
+					<label for="email">Only full-form, valid emails (eg. john_123@example.com)</label>
+					<br/><br/>
+
+
+					<div class="field_container">
+						<div class="dual_field">
+							<input id="stnumber" type="text" name="street_number" placeholder="Street Number (required)" onblur="genericFix('stnumber')">
+							<br/>
+							<label for="stnumber">Include unit number</label>
+						</div>
+						<div class="dual_field">
+							<input id="address" type="text" name="address" placeholder="Address (required)" onblur="genericFix('address')">
+							<br/>
+							<label for="address">Full Address</label>
+						</div>
+					</div>
+
+					<div class="field_container">
+						<div class="dual_field">
+							<input id="city" type="text" name="city" placeholder="City (required)" onblur="genericFix('city')">
+							<br/>
+							<label for="city">Choose your city</label>
+						</div>
+						<div class="dual_field">
+							<select id="province" name="province">
+								<option value="AB">AB</option>
+								<option value="BC">BC</option>
+								<option value="MB">MB</option>
+								<option value="NB">NB</option>
+								<option value="NL">NL</option>
+								<option value="NS">NS</option>
+								<option value="NT">NT</option>
+								<option value="NU">NU</option>
+								<option value="ON">ON</option>
+								<option value="PE">PE</option>
+								<option value="QC">QC</option>
+								<option value="SK">SK</option>
+								<option value="YT">YT</option>
+							</select>
+							<br/>
+							<label for="province">Choose your province</label>
+						</div>
+					</div>
+
+					<br/>
+
+					<input id="pcode" type="text" name="postal_code" placeholder="Postal Code (required)" onblur="pcodeFix()">
+					<br/>
+					<label for="pcode">Only Canadian postal codes (A1A 1A1)</label>
+					<br/>
+				</div>
+				<h3>> Checkout</h3>
+				<div id="checkout_section" class="menu_section">
+					<select id="hear" name="hear">
+						<option value="word">Word of mouth</option>
+						<option value="google">Google search</option>
+						<option value="ad">Promotion or advertisement</option>
+						<option value="forum">On a forum</option>
+					</select>
+					<br/>
+					<label for="hear">How did you hear about us?</label>
+					<br/><br/>
+					<input type="submit" value="Checkout">
+				</div>
+			</div>
+			
+        </form>
+        <span id="dialogue"></span>
+    </body>
+</html>
