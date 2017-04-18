@@ -16,6 +16,15 @@ td, th
 	border: 1px solid #DDDDDD;
 	padding: 8px;
 }
+td input
+{
+	width: 100%;
+	margin: 0;
+}
+td.input
+{
+	padding: 0;
+}
 
 td.text
 {
