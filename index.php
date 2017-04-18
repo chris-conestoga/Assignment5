@@ -1,7 +1,6 @@
 <html>
 
 	<head>
-		test
 
 		<link rel="stylesheet" href="assignment5.css" />
 
