@@ -1,18 +1,13 @@
 <html>
-
+	
 	<head>
-
 		<link rel="stylesheet" href="assignment5.css" />
-
 		<?php
-
 			require("vendorTableData.php");
-
 		?>
         <script src="validateVendorAddition.js" type="text/javascript"></script>
-
 	</head>
-
+	
 	<body>
 		<a href="index.php">Part Table</a>
 		<a href="queryTable.php">Query</a>
@@ -36,7 +31,7 @@
 		</form>
         <span id="dialogue"></span>
 	</body>
-
+	
 </html>
 
 

@@ -1,5 +1,6 @@
 body {
 	text-align: center;
+	font-family: sans-serif;
 }
 nav {
 	height: 1.5em;
@@ -15,6 +16,7 @@ a {
 	vertical-align: middle;
 	padding-top: .4em;
 	background-color: lightgray;
+	margin-bottom: .5em;
 }
 a:hover {
 	background-color: grey;
@@ -43,8 +45,8 @@ td.text {
 tr:nth-child(even) {
 	background-color: #DDDDDD;
 }
-dialogue {
-	color: red;
+#dialogue {
+	color: darkred;
 }
 
 

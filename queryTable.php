@@ -1,16 +1,11 @@
 <html>
 
 	<head>
-
 		<link rel="stylesheet" href="assignment5.css" />
-
 		<?php
-
 			require("queryTableData.php");
-
 		?>
         <script src="validateQuery.js" type="text/javascript"></script>
-
 	</head>
 
 	<body>
