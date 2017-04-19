@@ -4,6 +4,7 @@
 		<link rel="stylesheet" href="assignment5.css" />
 		<?php
 			require("vendorTableData.php");
+			include("validateVendorAddition.php");
 		?>
         <script src="validateVendorAddition.js" type="text/javascript"></script>
 	</head>
