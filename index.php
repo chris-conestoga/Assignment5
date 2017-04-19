@@ -4,7 +4,7 @@
 		<link rel="stylesheet" href="assignment5.css" />
 		<?php
 			require("partTableData.php");
-			include("validatePartAddition.php");
+			include("parts.php");
 		?>
         <script src="validatePartAddition.js" type="text/javascript"></script>
 	</head>
