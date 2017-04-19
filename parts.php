@@ -1,7 +1,4 @@
 <?php
-	include("connection.php");
-
-	print "<h3>Establishing Database connection...</h3>";
 
 	PartVerify();
 
@@ -18,17 +15,13 @@
 			$cost = $_POST['Cost'];
 			$listPrice = $_POST['ListPrice'];
 			//validate data
-			print "<h4>New row data: $vendorNo, $description, $onHand, $onOrder, $cost, $listPrice</h4>";
+			print "<br/><h3>New row data: $vendorNo, $description, $onHand, $onOrder, $cost, $listPrice</h3>";
 
 			//if successful:
 			print "<br/><h3>New row being added to the Parts table...</h3>";
-			//connect to database
-			$connection = ConnectToDatabase();
 			//insert new data
 			$sql = "INSERT INTO Parts VALUES ('$vendorNo', '$description', '$onHand', '$onOrder', '$cost', '$listPrice')";
-			
-			$connection -> exec($sql);
-			//^^^this is the line that is bugged.
+			//^^this line not updating database...
 
 			//else provide error:
 
@@ -36,3 +29,15 @@
 	}
 
 ?>
+
+<html>
+	<head>
+	</head>
+		<body>
+			<br/><br/>
+			<form id="partphp_form" action="index.php" method="post">
+				<input type="hidden" name="source" value="return">
+				<input type="submit" value="OK">
+			</form>
+		</body>
+</html>
