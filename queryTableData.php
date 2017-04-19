@@ -41,7 +41,7 @@
 
 		}
 
-		echo "The following Parts have an On Hand quantity of less than $userValue :<br/><br/>";
+		echo "<h3>The following Parts have an On Hand quantity of less than $userValue :</h3><br/><br/>";
 		echo $tableBodyText;
 
 	}
