@@ -9,7 +9,7 @@
 			require("partTableData.php");
 
 		?>
-        <script src="validateVendorAddition.js" type="text/javascript"></script>
+        <script src="validatePartAddition.js" type="text/javascript"></script>
 
 	</head>
 
@@ -18,10 +18,18 @@
 			<table>
 				<?php
 					CreatePartTableHeader();
-					FillPartTable();
+					//FillPartTable();
 				?>
+				<td class="input"><input type="submit" value="Add"></td>
+				<td class="input"><input type="text" name="VendorNo" id="VendorNo"></td>
+				<td class="input"><input type="text" name="Description" id="Address1"></td>
+				<td class="input"><input type="text" name="OnHand" id="OnHand"></td>
+				<td class="input"><input type="text" name="OnOrder" id="OnOrder"></td>
+				<td class="input"><input type="text" name="Cost" id="Cost"></td>
+				<td class="input"><input type="text" name="ListPrice" id="ListPrice"></td>
 			</table>
 		</form>
+        <span id="dialogue"></span>
 	</body>
 
 </html>
