@@ -32,6 +32,7 @@
 				<td class="input"><input type="text" name="Fax" id="Fax"></td>
 			</table>
 		</form>
+        <span id="dialogue"></span>
 	</body>
 
 </html>
