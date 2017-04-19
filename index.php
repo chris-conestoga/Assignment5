@@ -5,6 +5,7 @@
 		<?php
 			require("partTableData.php");
 			include("parts.php");
+			//not sure if we need parts.php here, I think this is our action page instead (after js validation) - JMP
 		?>
         <script src="validatePartAddition.js" type="text/javascript"></script>
 	</head>
