@@ -14,6 +14,8 @@
 	</head>
 
 	<body>
+		<a href="vendorTable.php">Vendor Table</a>
+		<a href="queryTable.php">Query</a>
 		<form id="part_form" onsubmit="return validateForm()" action="" method="post">
 			<table>
 				<?php

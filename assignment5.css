@@ -1,40 +1,50 @@
-body
-{
+body {
 	text-align: center;
 }
-
-table
-{
+nav {
+	height: 1.5em;
+	background-color: slategray;
+	margin-bottom: 3px;
+}
+a {
+	position: relative;
+	display: inline-block;
+	float: left;
+	width: 50%;
+	height: 1.5em;
+	vertical-align: middle;
+	padding-top: .4em;
+	background-color: lightgray;
+}
+a:hover {
+	background-color: grey;
+}
+table {
 	font-family: arial, sans-serif;
 	border-collapse: collapse;
 	width: 100%;
 	text-align: center;
 }
-
-td, th
-{
+td, th {
 	border: 1px solid #DDDDDD;
 	padding: 8px;
 }
-td input
-{
+td input {
 	width: 100%;
 	margin: 0;
 }
-td.input
-{
+td.input {
 	padding: 0;
 }
 
-td.text
-{
+td.text {
 	text-align: left;
 }
-
-tr:nth-child(even)
-{
+tr:nth-child(even) {
 	background-color: #DDDDDD;
 }
-
+dialogue {
+	color: red;
+}
 
 
