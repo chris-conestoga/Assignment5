@@ -8,7 +8,15 @@
 		$tableBodyText = "";
 
 		$connection = ConnectToDatabase();
-		$source = $_POST['source'];
+
+		if (isset($_POST['source']))
+		{
+			$source = $_POST['source'];
+		}
+		else
+		{
+			$source = "";
+		}
 
 		if ($source == "Query")
 		{
