@@ -22,8 +22,8 @@
 			//if successful:
 			print "<br/><h3>New row being added to the Parts table...</h3>";
 			//insert new data
-			$sql = "INSERT INTO Parts VALUES ('$vendorNo', '$description', '$onHand', '$onOrder', '$cost', '$listPrice')";
-			//^^not updating database... some kind of fucked-up error.
+			$sql = "INSERT INTO Parts (VendorNo, Description, OnHand, OnOrder, Cost, ListPrice) VALUES ($vendorNo, '$description', $onHand, $onOrder, $cost, $listPrice)";
+
 			$connection = ConnectToDatabase();
 			$preparedQuerySelect = $connection -> prepare($sql);
 			$preparedQuerySelect -> execute();
