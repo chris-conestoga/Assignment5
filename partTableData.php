@@ -8,8 +8,18 @@
 		$tableBodyText = "";
 
 		$connection = ConnectToDatabase();
+		$source = $_POST['source'];
 
-		$querySelect = "SELECT * FROM Parts";
+		if ($source == "Query")
+		{
+			$userValue = $_POST['parameter'];
+			$querySelect = "SELECT * FROM Parts WHERE (OnHand < $userValue)";
+		}
+		else
+		{
+			$querySelect = "SELECT * FROM Parts";
+		}
+
 		$preparedQuerySelect = $connection -> prepare($querySelect);
 		$preparedQuerySelect -> execute();
 
