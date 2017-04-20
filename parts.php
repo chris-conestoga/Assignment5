@@ -1,5 +1,7 @@
 <?php
 
+	include("connection.php");
+
 	PartVerify();
 
 	function PartVerify(){
@@ -21,7 +23,10 @@
 			print "<br/><h3>New row being added to the Parts table...</h3>";
 			//insert new data
 			$sql = "INSERT INTO Parts VALUES ('$vendorNo', '$description', '$onHand', '$onOrder', '$cost', '$listPrice')";
-			//^^this line not updating database...
+			//^^not updating database... some kind of fucked-up error.
+			$connection = ConnectToDatabase();
+			$preparedQuerySelect = $connection -> prepare($sql);
+			$preparedQuerySelect -> execute();
 
 			//else provide error:
 
