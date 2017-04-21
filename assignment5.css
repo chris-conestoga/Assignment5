@@ -7,20 +7,21 @@ nav {
 	background-color: slategray;
 	margin-bottom: 3px;
 }
-a {
+.nav input[type="submit"] {
 	position: relative;
 	display: inline-block;
 	float: left;
 	width: 50%;
-	height: 1.5em;
+	height: 3em;
 	vertical-align: middle;
-	padding-top: .4em;
 	background-color: lightgray;
 	margin-bottom: .5em;
+	border: none;
 }
-a:hover {
+.nav input[type="submit"]:hover {
 	background-color: grey;
 }
+
 table {
 	font-family: arial, sans-serif;
 	border-collapse: collapse;
@@ -48,5 +49,3 @@ tr:nth-child(even) {
 #dialogue {
 	color: darkred;
 }
-
-

@@ -65,8 +65,9 @@
 
 	function CreatePartTableHeader()
 	{
-
-		$text = "<tr id='tableHeader'>";
+		$text = "<form id='part_form' onsubmit='return validateForm()' action='parts.php' method='post'>";
+		$text .= "<table>";
+		$text .= "<tr id='tableHeader'>";
 		$text .= "<th>PartID</th>";
 		$text .= "<th>VendorNo</th>";
 		$text .= "<th>Description</th>";
@@ -77,7 +78,23 @@
 		$text .= "</tr>";
 
 		echo $text;
-
+	}
+	
+	function CreatePartTableInput()
+	{
+		
+		$text = "<td class='input'><input type='submit' value='Add'></td>";
+		$text .= "<td class='input'><input type='text' name='VendorNo' id='VendorNo'></td>";
+		$text .= "<td class='input'><input type='text' name='Description' id='Description'></td>";
+		$text .= "<td class='input'><input type='text' name='OnHand' id='OnHand'></td>";
+		$text .= "<td class='input'><input type='text' name='OnOrder' id='OnOrder'></td>";
+		$text .= "<td class='input'><input type='text' name='Cost' id='Cost'></td>";
+		$text .= "<td class='input'><input type='text' name='ListPrice' id='ListPrice'></td>";
+		$text .= "<input type='hidden' name='source' value='AddPart'>";
+		$text .= "</table>";
+		$text .= "</form>";
+			
+		echo $text;
 	}
 
 ?>

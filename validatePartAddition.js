@@ -3,29 +3,29 @@ function validateForm()
 	var errorMessage="";
 	var hasFocused=false;
 	
-	if (document.getElementById("VendorNo").value.length > 30)
+	if (isNaN(document.getElementById("VendorNo").value))
 	{
-		errorMessage=errorMessage.concat("Only up to 30 characters allowed in VendorNo<br/><br/>");
+		errorMessage=errorMessage.concat("VendorNo must be a number<br/><br/>");
 	}
 	if (document.getElementById("Description").value.length > 30)
 	{
 		errorMessage=errorMessage.concat("Only up to 30 characters allowed in Description<br/><br/>");
 	}
-	if (document.getElementById("OnHand").value.length > 20)
+	if (isNaN(document.getElementById("OnHand").value))
 	{
-		errorMessage=errorMessage.concat("Only up to 20 characters allowed in OnHand<br/><br/>");
+		errorMessage=errorMessage.concat("OnHand must be a number<br/><br/>");
 	}
-	if (document.getElementById("OnOrder").value.length > 2)
+	if (isNaN(document.getElementById("OnOrder").value))
 	{
-		errorMessage=errorMessage.concat("Only up to 2 characters allowed in OnOrder<br/><br/>");
+		errorMessage=errorMessage.concat("OnOrder must be a number<br/><br/>");
 	}
-	if (document.getElementById("Cost").value.length > 6)
+	if (isNaN(document.getElementById("Cost").value))
 	{
-		errorMessage=errorMessage.concat("Only up to 6 characters allowed in Cost<br/><br/>");
+		errorMessage=errorMessage.concat("Cost must be a number<br/><br/>");
 	}
-	if (document.getElementById("ListPrice").value.length > 2)
+	if (isNaN(document.getElementById("ListPrice").value))
 	{
-		errorMessage=errorMessage.concat("Only up to 2 characters allowed in ListPrice<br/><br/>");
+		errorMessage=errorMessage.concat("ListPrice must be a number<br/><br/>");
 	}
 	
 	if (errorMessage!=""){

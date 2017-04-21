@@ -50,8 +50,10 @@
 
 	function CreateVendorTableHeader()
 	{
-
-		$text = "<tr id='tableHeader'>";
+		
+		$text = "<form id='vendor_form' onsubmit='return validateForm()' action='' method='post'>";
+		$text .= "<table>";
+		$text .= "<tr id='tableHeader'>";
 		$text .= "<th>VendorNo</th>";
 		$text .= "<th>VendorName</th>";
 		$text .= "<th>Address1</th>";
@@ -62,11 +64,28 @@
 		$text .= "<th>Count</th>";
 		$text .= "<th>Phone</th>";
 		$text .= "<th>Fax</th>";
-
 		$text .= "</tr>";
 
 		echo $text;
 
+	}
+	function CreateVendorTableInput()
+	{
+		
+		$text = "<td class='input'><input type='submit' value='Add'></td>";
+		$text .= "<td class='input'><input type='text' name='VendorName' id='VendorName'></td>";
+		$text .= "<td class='input'><input type='text' name='Address1' id='Address1'></td>";
+		$text .= "<td class='input'>eh</td>";
+		$text .= "<td class='input'><input type='text' name='City' id='City'></td>";
+		$text .= "<td class='input'><input type='text' name='Prov' id='Prov'></td>";
+		$text .= "<td class='input'><input type='text' name='PostCode' id='PostCode'></td>";
+		$text .= "<td class='input'><input type='text' name='Count' id='Count'></td>";
+		$text .= "<td class='input'><input type='text' name='Phone' id='Phone'></td>";
+		$text .= "<td class='input'><input type='text' name='Fax' id='Fax'></td>";
+		$text .= "</table>";
+		$text .= "</form>";
+			
+		echo $text;
 	}
 
 ?>
