@@ -27,7 +27,7 @@
 	</head>
 	
 	<body>
-		<a class="nav">
+		<nav>
 			<form action="index.php" method="post">
 				<input type="submit" value="Part Table">
 				<input type="hidden" name="navigate" value="part">
@@ -36,7 +36,7 @@
 				<input type="submit" value="Vendor Table">
 				<input type="hidden" name="navigate" value="vendor">
 			</form>
-		</a>
+		</nav>
 		<?php
 //			Used to populate the table based on if
 //			the user is viewing the part table or vendor table.

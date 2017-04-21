@@ -2,12 +2,7 @@ body {
 	text-align: center;
 	font-family: sans-serif;
 }
-nav {
-	height: 1.5em;
-	background-color: slategray;
-	margin-bottom: 3px;
-}
-.nav input[type="submit"] {
+nav input[type="submit"] {
 	position: relative;
 	display: inline-block;
 	float: left;
@@ -18,7 +13,7 @@ nav {
 	margin-bottom: .5em;
 	border: none;
 }
-.nav input[type="submit"]:hover {
+nav input[type="submit"]:hover {
 	background-color: grey;
 }
 
@@ -39,7 +34,6 @@ td input {
 td.input {
 	padding: 0;
 }
-
 td.text {
 	text-align: left;
 }
