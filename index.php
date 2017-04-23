@@ -14,13 +14,13 @@
 			if ($navigate == "vendor")
 			{
 				require("vendorTableData.php");
-				//include("vendors.php");
+				include("vendors.php");
 				echo "<script src='validateVendorAddition.js' type='text/javascript'></script>";
 			}
 			else
 			{
 				require("partTableData.php");
-				//include("parts.php");
+				include("parts.php");
 				echo "<script src='validatePartAddition.js' type='text/javascript'></script>";
 			}
 		?>
@@ -48,19 +48,22 @@
 			}
 			if ($navigate == "vendor")
 			{
+				UpdateDatabase();
 				CreateVendorTableHeader();
 				FillVendorTable();
 				CreateVendorTableInput();
 			}
 			else
 			{
+				UpdateDatabase();
 				CreatePartTableHeader();
 				FillPartTable();
 				CreatePartTableInput();
 			}
 		?>
 		<br/>
-		<form id="query_form" onsubmit="" action="" method="post">
+		
+		<form id="query_form" onsubmit="" action="index.php" method="post">
 
 			Only list parts with fewer than this much 'on hand' inventory: <input type="number" name="parameter">
 			<input type="submit" value="Query">
@@ -70,23 +73,25 @@
 //				to make sure the user ends up on the same table
 //				they navigated to.
 //				Default is part table
-				$navigate = "";
 				if (isset($_POST['navigate']))
 				{
-					$navigate = $_POST['navigate'];
+					echo "<input type='hidden' name='navigate' value='".$_POST['navigate']."'>";
 				}
-				if ($navigate == "vendor")
+				$source = "";
+				if (isset($_POST['source']))
 				{
-					echo "<input type='hidden' name='navigate' value='vendor'>";
+					$source = $_POST['source'];
 				}
-				else
+				if ($source == "Query")
 				{
-					echo "<input type='hidden' name='navigate' value='part'>";
+					echo "</br><a href='index.php'>Click here to view all items</a>";
 				}
 			?>
 		</form>
-
-        <span id="dialogue"></span>
+		
+		<?php
+			PrintMessages();
+		?>
 	</body>
 	
 </html>

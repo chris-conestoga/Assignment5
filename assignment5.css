@@ -40,6 +40,6 @@ td.text {
 tr:nth-child(even) {
 	background-color: #DDDDDD;
 }
-#dialogue {
+#errorMessage {
 	color: darkred;
 }
