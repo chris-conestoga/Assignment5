@@ -10,6 +10,7 @@
 		}
 		if ($source == "AddVendor")
 		{
+			$vendorNo = GenerateVendorNo();
 			$vendorName = $_POST['VendorName'];
 			$address1 = $_POST['Address1'];
 			$address2 = $_POST['Address2'];
@@ -23,10 +24,10 @@
 			//validate data
 			if (VendorVerify($vendorName, $address1, $address2, $city, $province, $postalCode, $country, $phone, $fax))
 			{
-				$GLOBALS['message'] = "<br/><h3>New Vendor Added: $vendorName</br>Address1: $address1</br>Address2: $address2</br>City: $city</br>Province: $province</br>PostCode: $postalCode</br>Country: $country</br>Phone: $phone</br>Fax: $fax</h3>";
+				$GLOBALS['message'] = "<br/><h3>New Vendor Added: $vendorName [$vendorNo]</br>Address1: $address1</br>Address2: $address2</br>City: $city</br>Province: $province</br>PostCode: $postalCode</br>Country: $country</br>Phone: $phone</br>Fax: $fax</h3>";
 
 				//insert new data
-				$sql = "INSERT INTO Vendors (VendorName, Address1, Address2, City, Province, PostalCode, Country, Phone, Fax) VALUES ($vendorName, $address1, $address2, $city, $province, $postalCode, $country, $phone, $fax)";
+				$sql = "INSERT INTO Vendors (VendorNo, VendorName, Address1, Address2, City, Province, PostalCode, Country, Phone, Fax) VALUES ($vendorNo, $vendorName, $address1, $address2, $city, $province, $postalCode, $country, $phone, $fax)";
 
 				$connection = ConnectToDatabase();
 				$preparedQuerySelect = $connection -> prepare($sql);
@@ -67,5 +68,14 @@
 		}
 		echo "</span>";
 		echo "</div>";
+	}
+	function GenerateVendorNo()
+	{
+		$connection = ConnectToDatabase();
+		$querySelect = "SELECT MAX(VendorNo) FROM Vendors";
+		$preparedQuerySelect = $connection -> prepare($querySelect);
+		$preparedQuerySelect -> execute();
+		$vendorNo = $preparedQuerySelect -> fetch();
+		return ($vendorNo[0]+1);
 	}
 ?>

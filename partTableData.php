@@ -65,8 +65,8 @@
 
 	function CreatePartTableHeader()
 	{
-		$text = "<form id='part_form' onsubmit='return validateForm()' action='index.php' method='post'>";
-		$text .= "<table>";
+		$text = "<form id='part_form' onsubmit='return validateForm()' action='' method='post'>";
+		$text .= "<table id='partsTable'>";
 		$text .= "<tr id='tableHeader'>";
 		$text .= "<th>PartID</th>";
 		$text .= "<th>VendorNo</th>";
@@ -82,9 +82,24 @@
 	
 	function CreatePartTableInput()
 	{
-		
 		$text = "<td class='input'><input type='submit' value='Add'></td>";
-		$text .= "<td class='input'><input type='text' name='VendorNo' id='VendorNo'></td>";
+		
+		
+		$connection = ConnectToDatabase();
+		$querySelect = "SELECT * FROM Parts";
+		$preparedQuerySelect = $connection -> prepare($querySelect);
+		$preparedQuerySelect -> execute();
+		
+		$text .= "<td class='input'><select class='input' name='VendorNo'>";
+		while ($row = $preparedQuerySelect -> fetch())
+		{
+			$vendorNo = $row['VendorNo'];
+			$vendorNo = round($vendorNo);
+			$text .= "<option value='$vendorNo'>$vendorNo</option>";
+		}
+		$text .= "</select></td>";
+		
+		
 		$text .= "<td class='input'><input type='text' name='Description' id='Description'></td>";
 		$text .= "<td class='input'><input type='text' name='OnHand' id='OnHand'></td>";
 		$text .= "<td class='input'><input type='text' name='OnOrder' id='OnOrder'></td>";

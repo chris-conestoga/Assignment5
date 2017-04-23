@@ -27,7 +27,7 @@ td, th {
 	border: 1px solid #DDDDDD;
 	padding: 8px;
 }
-td input {
+td input, select {
 	width: 100%;
 	margin: 0;
 }
