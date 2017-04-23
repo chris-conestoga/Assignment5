@@ -2,6 +2,7 @@ function validateForm()
 {
 	var errorMessage="";
 	var hasFocused=false;
+	
 	if (isNaN(document.getElementById("VendorNo").value))
 	{
 		errorMessage=errorMessage.concat("VendorNo must be a number<br/><br/>");
@@ -26,13 +27,9 @@ function validateForm()
 	{
 		errorMessage=errorMessage.concat("ListPrice must be a number<br/><br/>");
 	}
-	if (errorMessage != "")
-	{
-		if (document.getElementById("errorMessage").innerHTML == "")
-		{
-			alert("success");
-			errorMessage="<h2>ERROR:</h2>"+errorMessage;
-		}	document.getElementById("errorMessage").innerHTML=document.getElementById("errorMessage").innerHTML+errorMessage;
+	
+	if (errorMessage!=""){
+		document.getElementById("dialogue").innerHTML="<h2>ERROR:</h2>"+errorMessage;
 		return false;
 	}
 }

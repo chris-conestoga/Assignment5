@@ -75,18 +75,13 @@
 		$text = "<td class='input'><input type='submit' value='Add'></td>";
 		$text .= "<td class='input'><input type='text' name='VendorName' id='VendorName'></td>";
 		$text .= "<td class='input'><input type='text' name='Address1' id='Address1'></td>";
-		$text .= "<td class='input'><input type='text' name='Address2' id='Address2'></td>";
+		$text .= "<td class='input'>eh</td>";
 		$text .= "<td class='input'><input type='text' name='City' id='City'></td>";
 		$text .= "<td class='input'><input type='text' name='Prov' id='Prov'></td>";
 		$text .= "<td class='input'><input type='text' name='PostCode' id='PostCode'></td>";
 		$text .= "<td class='input'><input type='text' name='Count' id='Count'></td>";
 		$text .= "<td class='input'><input type='text' name='Phone' id='Phone'></td>";
 		$text .= "<td class='input'><input type='text' name='Fax' id='Fax'></td>";
-		$text .= "<input type='hidden' name='source' value='AddVendor'>";
-		if (isset($_POST['navigate']))
-		{
-			echo "<input type='hidden' name='navigate' value='".$_POST['navigate']."'>";
-		}
 		$text .= "</table>";
 		$text .= "</form>";
 			

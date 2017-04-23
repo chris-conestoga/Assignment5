@@ -21,7 +21,7 @@
 		if ($source == "Query")
 		{
 			$userValue = $_POST['parameter'];
-			$querySelect = "SELECT * FROM Parts WHERE (OnHand <= $userValue)";
+			$querySelect = "SELECT * FROM Parts WHERE (OnHand < $userValue)";
 		}
 		else
 		{
@@ -65,7 +65,7 @@
 
 	function CreatePartTableHeader()
 	{
-		$text = "<form id='part_form' onsubmit='return validateForm()' action='index.php' method='post'>";
+		$text = "<form id='part_form' onsubmit='return validateForm()' action='parts.php' method='post'>";
 		$text .= "<table>";
 		$text .= "<tr id='tableHeader'>";
 		$text .= "<th>PartID</th>";
@@ -91,10 +91,6 @@
 		$text .= "<td class='input'><input type='text' name='Cost' id='Cost'></td>";
 		$text .= "<td class='input'><input type='text' name='ListPrice' id='ListPrice'></td>";
 		$text .= "<input type='hidden' name='source' value='AddPart'>";
-		if (isset($_POST['navigate']))
-		{
-			echo "<input type='hidden' name='navigate' value='".$_POST['navigate']."'>";
-		}
 		$text .= "</table>";
 		$text .= "</form>";
 			
