@@ -52,7 +52,7 @@
 	{
 		
 		$text = "<form id='vendor_form' onsubmit='return validateForm()' action='' method='post'>";
-		$text .= "<table>";
+		$text .= "<table id='vendorTable'>";
 		$text .= "<tr id='tableHeader'>";
 		$text .= "<th>VendorNo</th>";
 		$text .= "<th>VendorName</th>";
