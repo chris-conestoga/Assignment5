@@ -2,6 +2,7 @@
 
 	function VerifyQuery($temp)
 	{
+		//checking user parameters
 		if ($temp>=0)
 		{
 			return true;
