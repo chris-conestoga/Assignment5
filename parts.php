@@ -26,24 +26,50 @@
 				$sql = "INSERT INTO Parts (VendorNo, Description, OnHand, OnOrder, Cost, ListPrice) VALUES ($vendorNo, '$description', $onHand, $onOrder, $cost, $listPrice)";
 
 				$connection = ConnectToDatabase();
-				$preparedQuerySelect = $connection -> prepare($sql);
-				$preparedQuerySelect -> execute();
+				//NEED THIS FIXED!!
+				//$preparedQuerySelect = $connection -> prepare($sql);
+				//$preparedQuerySelect -> execute();
 
 			}
 		}
 	}
 	function PartVerify($vendorNo, $description, $onHand, $onOrder, $cost, $listPrice)
 	{
-		if (true)
+		$GLOBALS['errorMessage'] = "";
+		if (is_null($vendorNo))
+		{
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a vendor number.<br/>";
+		}
+		if (is_null($description) || strlen($description) < 4)
+		{
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a part description.<br/>";
+		}
+		if (is_null($onHand) || $onHand < 0)
+		{
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter an amount of on-Hand inventory.<br/>";
+		}
+		if (is_null($onOrder) || $onOrder < 0)
+		{
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter an amount of on-Order inventory.<br/>";
+		}
+		if (is_null($cost) || $cost < 0)
+		{
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a cost.<br/>";
+		}
+		if (is_null($listPrice) || $listPrice < 0)
+		{
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a list price.<br/>";
+		}
+
+		if ($GLOBALS['errorMessage'] == "")
 		{
 			return true;
 		}
 		else
 		{
-			$GLOBALS_['errorMessage'] = "";
 			return false;
 		}
-		//else provide error:
+
 	}
 	function PrintMessages()
 	{
