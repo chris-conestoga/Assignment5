@@ -22,7 +22,7 @@
 			$fax = $_POST['Fax'];
 			
 			//validate data
-			if (VendorVerify($vendorName, $address1, $address2, $city, $province, $postalCode, $country, $phone, $fax))
+			if (VendorVerify($vendorName, $address1, $city, $province, $postalCode, $country, $phone))
 			{
 				$GLOBALS['message'] = "<br/><h3>New Vendor Added: $vendorName [$vendorNo]</br>Address1: $address1</br>Address2: $address2</br>City: $city</br>Province: $province</br>PostCode: $postalCode</br>Country: $country</br>Phone: $phone</br>Fax: $fax</h3>";
 
@@ -37,18 +37,46 @@
 		}
 	}
 
-	function VendorVerify($vendorName, $address1, $address2, $city, $province, $postalCode, $country, $phone, $fax)
+	function VendorVerify($vendorName, $address1, $city, $province, $postalCode, $country, $phone)
 	{
-		if (true)
+		$GLOBALS['errorMessage'] = "";
+		if (is_null($vendorName))
+		{
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a vendor name.<br/>";
+		}
+		if (is_null($address1) || strlen($address1) < 4)
+		{
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a vendor street address.<br/>";
+		}
+		if (is_null($city) || strlen($city) < 3)
+		{
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a city.<br/>";
+		}
+		if (is_null($province) || strlen($province) < 2)
+		{
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a province.<br/>";
+		}
+		if (is_null($postalCode) || strlen($postalCode) < 6)
+		{
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a postal code.<br/>";
+		}
+		if (is_null($country) || strlen($country) < 4)
+		{
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a country.<br/>";
+		}
+		if (is_null($phone) || strlen($phone) < 10)
+		{
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a phone number (including area code).<br/>";
+		}
+
+		if ($GLOBALS['errorMessage'] == "")
 		{
 			return true;
 		}
 		else
 		{
-			$GLOBALS_['errorMessage'] = "";
 			return false;
 		}
-		//else provide error:
 	}
 	function PrintMessages()
 	{
