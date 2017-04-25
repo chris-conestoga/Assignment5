@@ -65,19 +65,24 @@
 		<br/>
 		
 		<form id="query_form" onsubmit="" action="index.php" method="post">
-
-			Only list parts with fewer than this much 'on hand' inventory: <input type="number" name="parameter">
-			<input type="submit" value="Query">
-			<input type="hidden" name="source" value="Query">
+			
 			<?php
+				$navigate = "";
+				if (isset($_POST['navigate']))
+				{
+					$navigate = $_POST['navigate'];
+					echo "<input type='hidden' name='navigate' value='".$_POST['navigate']."'>";
+				}
+				if ($navigate != "vendor")
+				{
+					echo "Only list parts with fewer than this much 'on hand' inventory: <input type='number' name='parameter'>";
+					echo "<input type='submit' value='Query'>";
+					echo "<input type='hidden' name='source' value='Query'>";
+				}
 //				Used to pass a hidden variable along with the query
 //				to make sure the user ends up on the same table
 //				they navigated to.
 //				Default is part table
-				if (isset($_POST['navigate']))
-				{
-					echo "<input type='hidden' name='navigate' value='".$_POST['navigate']."'>";
-				}
 				$source = "";
 				if (isset($_POST['source']))
 				{

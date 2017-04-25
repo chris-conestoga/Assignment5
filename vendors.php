@@ -22,7 +22,7 @@
 			$fax = $_POST['Fax'];
 			
 			//validate data
-			if (VendorVerify($vendorName, $address1, $city, $province, $postalCode, $country, $phone))
+			if (VendorVerify($vendorName, $address1, $address2, $city, $province, $postalCode, $country, $phone))
 			{
 				$GLOBALS['message'] = "<br/><h3>New Vendor Added: $vendorName [$vendorNo]</br>Address1: $address1</br>Address2: $address2</br>City: $city</br>Province: $province</br>PostCode: $postalCode</br>Country: $country</br>Phone: $phone</br>Fax: $fax</h3>";
 
@@ -37,7 +37,7 @@
 		}
 	}
 
-	function VendorVerify($vendorName, $address1, $city, $province, $postalCode, $country, $phone)
+	function VendorVerify($vendorName, $address1, $address2, $city, $province, $postalCode, $country, $phone)
 	{
 		$GLOBALS['errorMessage'] = "";
 		if (is_null($vendorName))
@@ -47,6 +47,10 @@
 		if (is_null($address1) || strlen($address1) < 4)
 		{
 			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a vendor street address at least 4 characters in length.<br/>";
+		}
+		if (is_null($address2) || strlen($address2) < 4)
+		{
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a vendor street address2 at least 4 characters in length.<br/>";
 		}
 		if (is_null($city) || strlen($city) < 3)
 		{

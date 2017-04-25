@@ -8,8 +8,8 @@
 		}
 		else
 		{
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."Cannot query for negative On-Hand inventory.<br/>";
 			return false;
 		}
 	}
-
 ?>

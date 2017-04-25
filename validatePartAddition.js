@@ -3,9 +3,7 @@ function validateForm()
 	var errorMessage="";
 	var hasFocused=false;
 	
-	//alert($('#partsTable td:nth-child(1)').map(function(){
-	//		return $(this).text();
-	//			}).get());
+	alert("test");
 	if (document.getElementById("VendorNo").value + "" == "")
 		errorMessage=errorMessage.concat("VendorNo required<br/><br/>");
 	
@@ -44,11 +42,6 @@ function validateForm()
 	if (isNaN(document.getElementById("ListPrice").value))
 		errorMessage=errorMessage.concat("ListPrice must be a number<br/><br/>");
 	
-	var nRows = document.getElementById("partsTable").rows.length - 1;
-	alert(nRows);
-	for (i=0;i<nRows;i++){
-		
-	}
 	
 	if (errorMessage != "")
 	{

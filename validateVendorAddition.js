@@ -10,6 +10,9 @@ function validateForm()
 	if (document.getElementById("Address1").value + "" == "")
 		errorMessage=errorMessage.concat("Address1 required<br/><br/>");
 	
+	if (document.getElementById("Address2").value + "" == "")
+		errorMessage=errorMessage.concat("Address2 required<br/><br/>");
+	
 	if (document.getElementById("City").value + "" == "")
 		errorMessage=errorMessage.concat("City required<br/><br/>");
 	
@@ -35,6 +38,9 @@ function validateForm()
 	
 	if (document.getElementById("Address1").value.length > 30)
 		errorMessage=errorMessage.concat("Only up to 30 characters allowed in Address1<br/><br/>");
+	
+	if (document.getElementById("Address2").value.length > 30)
+		errorMessage=errorMessage.concat("Only up to 30 characters allowed in Address2<br/><br/>");
 	
 	if (document.getElementById("City").value.length > 20)
 		errorMessage=errorMessage.concat("Only up to 20 characters allowed in City<br/><br/>");

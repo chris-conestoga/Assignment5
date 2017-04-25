@@ -51,7 +51,7 @@
 	function CreateVendorTableHeader()
 	{
 		
-		$text = "<form id='vendor_form' onsubmit='return validateForm()' action='' method='post'>";
+		$text = "<form id='vendor_form' onsubmit='return validateForm()' action='index.php' method='post'>";
 		$text .= "<table id='vendorTable'>";
 		$text .= "<tr id='tableHeader'>";
 		$text .= "<th>VendorNo</th>";
@@ -88,6 +88,7 @@
 			echo "<input type='hidden' name='navigate' value='".$_POST['navigate']."'>";
 		}
 		$text .= "</table>";
+		$text .= "Enter new Vendor information to all fields. Press 'Add' to add to database.";
 		$text .= "</form>";
 			
 		echo $text;

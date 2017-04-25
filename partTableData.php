@@ -1,7 +1,7 @@
 <?php
 
 	include("connection.php");
-
+	
 	function FillPartTable()
 	{
 
@@ -20,8 +20,16 @@
 
 		if ($source == "Query")
 		{
+			include ("parameters.php");
 			$userValue = $_POST['parameter'];
-			$querySelect = "SELECT * FROM Parts WHERE (OnHand <= $userValue)";
+			if (VerifyQuery($userValue))
+			{
+				$querySelect = "SELECT * FROM Parts WHERE (OnHand <= $userValue)";
+			}
+			else 
+			{
+				$querySelect = "SELECT * FROM Parts";
+			}
 		}
 		else
 		{
@@ -65,7 +73,7 @@
 
 	function CreatePartTableHeader()
 	{
-		$text = "<form id='part_form' onsubmit='return validateForm()' action='' method='post'>";
+		$text = "<form id='part_form' onsubmit='return validateForm()' action='index.php' method='post'>";
 		$text .= "<table id='partsTable'>";
 		$text .= "<tr id='tableHeader'>";
 		$text .= "<th>PartID</th>";
@@ -111,6 +119,7 @@
 			echo "<input type='hidden' name='navigate' value='".$_POST['navigate']."'>";
 		}
 		$text .= "</table>";
+		$text .= "Enter new part information to all fields. Press 'Add' to add to database.";
 		$text .= "</form>";
 			
 		echo $text;
