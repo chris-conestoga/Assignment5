@@ -1,6 +1,9 @@
 <?php
 	$errorMessage = "";
 	$message = "";
+
+//	checks if user is trying to add a new vendor, validates the data and
+//	adds it to the table
 	function UpdateDatabase()
 	{
 		$source = "";
@@ -37,6 +40,7 @@
 		}
 	}
 
+//	validates the users input
 	function VendorVerify($vendorName, $address1, $address2, $city, $province, $postalCode, $country, $phone)
 	{
 		$GLOBALS['errorMessage'] = "";
@@ -82,6 +86,8 @@
 			return false;
 		}
 	}
+
+//	checks if any messages or error messages exist, and displays them
 	function PrintMessages()
 	{
 		echo "<div id='dialogue'>";
@@ -101,6 +107,8 @@
 		echo "</span>";
 		echo "</div>";
 	}
+
+//	generates new unique vendor number
 	function GenerateVendorNo()
 	{
 		$connection = ConnectToDatabase();

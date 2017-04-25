@@ -1,3 +1,4 @@
+//validates all user inputs when trying to add new vendor
 function validateForm()
 {
 	var errorMessage="";
@@ -61,7 +62,7 @@ function validateForm()
 		errorMessage=errorMessage.concat("Only up to 12 characters allowed in Fax<br/><br/>");
 	
 	
-	
+//	prints error message if one exists, and returns false if validation failed
 	if (errorMessage!="")
 	{
 		document.getElementById("errorMessage").innerHTML = "";

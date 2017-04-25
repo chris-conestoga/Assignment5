@@ -1,6 +1,9 @@
 <?php
 	$errorMessage = "";
 	$message = "";
+
+//	checks if user is trying to add a new part, validates the data and
+//	adds it to the table
 	function UpdateDatabase()
 	{
 		$source = "";
@@ -33,6 +36,8 @@
 			}
 		}
 	}
+
+//	validates the users input
 	function PartVerify($vendorNo, $description, $onHand, $onOrder, $cost, $listPrice)
 	{
 		$GLOBALS['errorMessage'] = "";
@@ -71,6 +76,8 @@
 		}
 
 	}
+
+//	checks if any messages or error messages exist, and displays them
 	function PrintMessages()
 	{
 		echo "<div id='dialogue'>";

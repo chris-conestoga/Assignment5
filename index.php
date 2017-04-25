@@ -28,6 +28,7 @@
 	</head>
 	
 	<body>
+//		reloads the page with a hidden variable used to load a specific table
 		<nav>
 			<form action="index.php" method="post">
 				<input type="submit" value="Part Table">
@@ -39,6 +40,7 @@
 			</form>
 		</nav>
 		<?php
+		
 //			Used to populate the table based on if
 //			the user is viewing the part table or vendor table.
 //			Default is part table
@@ -65,8 +67,9 @@
 		<br/>
 		
 		<form id="query_form" onsubmit="" action="index.php" method="post">
-			
 			<?php
+//				checks which table the user is viewing and only displays query
+//				if viewing the parts table
 				$navigate = "";
 				if (isset($_POST['navigate']))
 				{
@@ -79,6 +82,7 @@
 					echo "<input type='submit' value='Query'>";
 					echo "<input type='hidden' name='source' value='Query'>";
 				}
+			
 //				Used to pass a hidden variable along with the query
 //				to make sure the user ends up on the same table
 //				they navigated to.

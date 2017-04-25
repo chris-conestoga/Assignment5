@@ -1,3 +1,4 @@
+//validates user inputs when trying to add new part
 function validateForm()
 {
 	var errorMessage="";
@@ -43,6 +44,7 @@ function validateForm()
 		errorMessage=errorMessage.concat("ListPrice must be a number<br/><br/>");
 	
 	
+//	prints error message if one exists, and returns false if validation failed
 	if (errorMessage != "")
 	{
 		document.getElementById("errorMessage").innerHTML = "";
