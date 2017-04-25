@@ -9,6 +9,7 @@
 
 		$connection = ConnectToDatabase();
 
+		//checking where user is coming from
 		if (isset($_POST['source']))
 		{
 			$source = $_POST['source'];
@@ -18,6 +19,7 @@
 			$source = "";
 		}
 
+		//build sql statement based on whether user is querying or not
 		if ($source == "Query")
 		{
 			include ("parameters.php");
