@@ -46,27 +46,27 @@
 		}
 		if (is_null($address1) || strlen($address1) < 4)
 		{
-			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a vendor street address.<br/>";
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a vendor street address at least 4 characters in length.<br/>";
 		}
 		if (is_null($city) || strlen($city) < 3)
 		{
-			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a city.<br/>";
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a city at least 3 characters in length.<br/>";
 		}
 		if (is_null($province) || strlen($province) < 2)
 		{
-			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a province.<br/>";
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a province at least 2 characters in length.<br/>";
 		}
-		if (is_null($postalCode) || strlen($postalCode) < 6)
+		if (is_null($postalCode) || strlen($postalCode) < 5)
 		{
-			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a postal code.<br/>";
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a postal code at least 5 characters in length.<br/>";
 		}
-		if (is_null($country) || strlen($country) < 4)
+		if (is_null($country) || strlen($country) < 2)
 		{
-			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a country.<br/>";
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a country at least 2 characters in length.<br/>";
 		}
 		if (is_null($phone) || strlen($phone) < 10)
 		{
-			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a phone number (including area code).<br/>";
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a phone number (including area code) at least 10 characters in length.<br/>";
 		}
 
 		if ($GLOBALS['errorMessage'] == "")

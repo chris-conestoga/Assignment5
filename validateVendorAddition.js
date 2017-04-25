@@ -58,6 +58,7 @@ function validateForm()
 	
 	if (errorMessage!="")
 	{
+		document.getElementById("errorMessage").innerHTML = "";
 		if (document.getElementById("errorMessage").innerHTML == "")
 		{
 			errorMessage="<h2>ERROR:</h2>"+errorMessage;

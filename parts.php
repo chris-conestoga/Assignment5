@@ -27,8 +27,8 @@
 
 				$connection = ConnectToDatabase();
 				//NEED THIS FIXED!!
-				//$preparedQuerySelect = $connection -> prepare($sql);
-				//$preparedQuerySelect -> execute();
+				$preparedQuerySelect = $connection -> prepare($sql);
+				$preparedQuerySelect -> execute();
 
 			}
 		}
@@ -42,7 +42,7 @@
 		}
 		if (is_null($description) || strlen($description) < 4)
 		{
-			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a part description.<br/>";
+			$GLOBALS['errorMessage'] = $GLOBALS['errorMessage']."You must enter a part description at least 4 character in length.<br/>";
 		}
 		if (is_null($onHand) || $onHand < 0)
 		{
